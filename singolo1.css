@@ -31,3 +31,188 @@
   font-style: normal;
   font-weight: 900;
 }
+
+/* Basic style */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  min-width: 320px;
+
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+:-moz-input:focus,
+:-ms-input:focus,
+::-webkit-input:focus,
+input:focus {
+  outline: none;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+
+  color: #666d89;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+
+  background-color: #ffffff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.reset-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Header */
+.main-header {
+  padding: 26px 0 26px;
+  border-bottom: 6px solid #323746;
+
+  color: #ffffff;
+
+  background-color: #2d303a;
+}
+
+.main-header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  margin-right: 20px;
+}
+
+.logo__link {
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.logo__sign {
+  color: #f06c64;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  position: relative;
+
+  padding-right: 30px;
+
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  transition: color 0.2s linear;
+}
+
+.nav__link:last-child {
+  padding-right: 0;
+}
+
+.nav__link:first-child {
+  color: #f06c64;
+  cursor: default;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background-color: #494e62;
+}
+
+.nav__link:last-child::after {
+  display: none;
+}
+
+.nav__link:hover {
+  color: #f06c64;
+}
