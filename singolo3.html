@@ -14,5 +14,82 @@
     <link rel="stylesheet" type="text/css" href="singolo3.css" />
     <title>Form</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <section class="feedback">
+        <div class="container">
+          <h1 class="feedback__title">Get a Quote</h1>
+          <p class="feedback__text">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+            Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
+            tortor mauris condimentum nibh.
+          </p>
+          <div class="feedback__wrap">
+            <form action="#" method="POST" class="feedback__form  form">
+              <input
+                class="form__field  form__field--name"
+                type="text"
+                placeholder="Name (Required)"
+                pattern="[A-Za-z]+"
+                minlength="4"
+                maxlength="20"
+                required
+              />
+              <input
+                class="form__field  form__field--mail"
+                type="email"
+                placeholder="Email (Required)"
+                required
+              />
+              <input
+                class="form__field  form__field--subject"
+                type="text"
+                placeholder="Subject"
+              />
+              <textarea
+                class="form__field  form__field--detail"
+                name="detail"
+                id="detail"
+                cols="30"
+                rows="12"
+                placeholder="Describe your project in detail..."
+              ></textarea>
+              <button class="form__btn" type="submit">Submit</button>
+            </form>
+            <article class="form__contacts  contacts">
+              <h2 class="visually-hidden">Our contacts</h2>
+              <p class="contacts__title">Contact Information</p>
+              <p class="contacts__text">
+                Quisque hendrerit purus dapibus, ornare nibh vitae, viver- ra
+                nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat
+                libero. Nulla sed nunc et tortor luctus faucibus. Morbi at
+                aliquet turpis, et consequat felis.
+              </p>
+              <ul class="contacts__list  reset-list">
+                <li class="contacts__item  contacts__item--location">
+                  <a class="contacts__location" href="#"
+                    >Elm St. 14/05 Lost City
+                  </a>
+                </li>
+                <li class="contacts__item  contacts__item--tel">
+                  <a class="contacts__tel" href="tel:035283318635 "
+                    >03528 331 86 35
+                  </a>
+                </li>
+                <li class="contacts__item  contacts__item--mail">
+                  <a class="contacts__mail" href="mailto:info@singolo.com"
+                    >info@singolo.com</a
+                  >
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <!-- container ¯\_(ツ)_/¯ -->
+      </section>
+      <!-- feedback ¯\_(ツ)_/¯ -->
+    </div>
+    <!-- wrapper ¯\_(ツ)_/¯ -->
+  </body>
 </html>
