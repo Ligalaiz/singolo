@@ -342,6 +342,7 @@ img {
   font-size: 18px;
   line-height: 1.6;
   font-weight: 300;
+  text-align: justify;
 }
 
 .services__wrap {
