@@ -527,6 +527,7 @@
                 <input
                   class="form__field  form__field--name"
                   type="text"
+                  name="name"
                   placeholder="Name (Required)"
                   pattern="[A-Za-z]+"
                   minlength="4"
@@ -536,12 +537,15 @@
                 <input
                   class="form__field  form__field--mail"
                   type="email"
+                  name="email"
                   placeholder="Email (Required)"
+                  pattern="[^ @]*@[^ @]*"
                   required
                 />
                 <input
                   class="form__field  form__field--subject"
                   type="text"
+                  name="subject"
                   placeholder="Subject"
                 />
                 <textarea
