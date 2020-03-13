@@ -867,3 +867,15 @@ img {
 .social__img {
   display: block;
 }
+
+/* Copyright */
+
+.copyright__text {
+  padding-left: 3px;
+
+  font-size: 12px;
+  color: #666d89;
+  letter-spacing: -0.1px;
+  font-family: "Lato";
+  line-height: 1.6;
+}
