@@ -153,7 +153,11 @@ img {
   align-items: baseline;
   flex-wrap: wrap;
 }
-
+.menu--fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
 /* Logo */
 .logo {
   margin-right: 20px;
@@ -237,11 +241,11 @@ img {
   transform: scaleX(1);
 }
 
-.nav__item--active .nav__link:hover::before {
+.nav__link--active:hover::before {
   visibility: hidden;
 }
 
-.nav__item--active .nav__link {
+.nav__link--active {
   color: #f06c64;
   cursor: default;
 }
