@@ -90,3 +90,22 @@ phoneHorizontal.addEventListener("click", () => {
     screenExist = 1;
   }
 });
+
+// Tab Switching
+
+const filter = document.querySelector(".filter");
+const tabs = filter.querySelectorAll(".filter__btn");
+const layouts = document.querySelectorAll(".layouts__item");
+
+filter.addEventListener("click", evt => {
+  evt.preventDefault();
+  for (let tab of tabs) {
+    tab.classList.remove("filter__btn--active");
+  }
+  evt.target.classList.add("filter__btn--active");
+  for (let i = 0; i < layouts.length; i++) {
+    layouts[i].style.order = Math.round(
+      1 - 0.5 + Math.random() * (layouts.length - 1 + 1)
+    );
+  }
+});
