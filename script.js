@@ -60,3 +60,33 @@ nextBtn.addEventListener("click", () => {
   slideSwitch(1);
   slider.classList.toggle("slider--active");
 });
+
+// Activating Phone Screens
+
+let phoneVertical = slider.querySelector(".phone-vertical");
+let phoneHorizontal = slider.querySelector(".phone-horizontal");
+let screenExist = 0;
+
+phoneVertical.addEventListener("click", () => {
+  if (screenExist) {
+    slider.querySelector("#phone-vertical").src =
+      "assets/img/slider/phone-vertical.png";
+    screenExist = 0;
+  } else {
+    slider.querySelector("#phone-vertical").src =
+      "assets/img/slider/phone-vertical--off.png";
+    screenExist = 1;
+  }
+});
+
+phoneHorizontal.addEventListener("click", () => {
+  if (screenExist) {
+    slider.querySelector("#phone-horizontal").src =
+      "assets/img/slider/phone-horizontal.png";
+    screenExist = 0;
+  } else {
+    slider.querySelector("#phone-horizontal").src =
+      "assets/img/slider/phone-horizontal--off.png";
+    screenExist = 1;
+  }
+});

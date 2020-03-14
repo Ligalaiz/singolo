@@ -317,15 +317,11 @@ img {
   width: 240px;
   height: 483px;
   margin-right: 70px;
-
-  background-image: url("assets/img/slider/phone-vertical.png");
 }
 
 .phone-horizontal {
   width: 483px;
   height: 240px;
-
-  background-image: url("assets/img/slider/phone-horizontal.png");
 }
 
 .slider__img {
