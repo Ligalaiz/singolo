@@ -28,7 +28,15 @@ for (let i = 0; i < anchors.length; i++) {
 // Menu fixed position
 
 window.addEventListener("scroll", function() {
-  if (pageYOffset >= 100) {
+  if (pageYOffset >= 95.5) {
+    header.classList.add("menu--fixed");
+  } else {
+    header.classList.remove("menu--fixed");
+  }
+});
+
+window.addEventListener("load", function() {
+  if (pageYOffset >= 95.5) {
     header.classList.add("menu--fixed");
   } else {
     header.classList.remove("menu--fixed");
