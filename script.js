@@ -95,7 +95,9 @@ phoneHorizontal.addEventListener("click", () => {
 
 const filter = document.querySelector(".filter");
 const tabs = filter.querySelectorAll(".filter__btn");
-const layouts = document.querySelectorAll(".layouts__item");
+const layouts = document.querySelector(".layouts");
+const layoutsItm = document.querySelectorAll(".layouts__item");
+const layoutsImg = layouts.querySelectorAll(".layouts__item  img");
 
 filter.addEventListener("click", evt => {
   evt.preventDefault();
@@ -103,9 +105,19 @@ filter.addEventListener("click", evt => {
     tab.classList.remove("filter__btn--active");
   }
   evt.target.classList.add("filter__btn--active");
-  for (let i = 0; i < layouts.length; i++) {
-    layouts[i].style.order = Math.round(
-      1 - 0.5 + Math.random() * (layouts.length - 1 + 1)
+  for (let i = 0; i < layoutsItm.length; i++) {
+    layoutsItm[i].style.order = Math.round(
+      1 - 0.5 + Math.random() * (layoutsItm.length - 1 + 1)
     );
   }
+});
+
+// Image Interaction
+
+layouts.addEventListener("click", evt => {
+  evt.preventDefault();
+  for (let img of layoutsImg) {
+    img.classList.remove("layouts__item--active");
+  }
+  evt.target.classList.add("layouts__item--active");
 });

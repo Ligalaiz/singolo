@@ -510,6 +510,10 @@ img {
   background-color: rgba(240, 108, 100, 1);
 }
 
+.layouts__item--active {
+  border: 5px solid #f06c64;
+}
+
 .layouts__wrap {
   transition: all 0.2s linear;
 }
