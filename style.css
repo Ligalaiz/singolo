@@ -264,6 +264,11 @@ img {
   overflow: hidden;
 }
 
+.slider--active {
+  background-color: #648bf0;
+  border-color: #5a80e3;
+}
+
 .slider__wrap {
   position: relative;
 }
@@ -277,17 +282,15 @@ img {
   height: 27px;
   border: none;
 
-  background-image: url("assets/img/prev.png");
+  background-image: url("assets/img/slider/prev.svg");
   background-repeat: no-repeat;
   background-color: transparent;
 
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s linear;
 }
 
 .slider__btn:hover {
-  opacity: 1;
+  background-image: url("assets/img/slider/prev_hover.svg");
 }
 .slider__btn--next {
   transform: translateY(-50%) rotate(180deg);
@@ -315,14 +318,22 @@ img {
   height: 483px;
   margin-right: 70px;
 
-  background-image: url("assets/img/phone-vertical.png");
+  background-image: url("assets/img/slider/phone-vertical.png");
 }
 
 .phone-horizontal {
   width: 483px;
   height: 240px;
 
-  background-image: url("assets/img/phone-horizontal.png");
+  background-image: url("assets/img/slider/phone-horizontal.png");
+}
+
+.slider__img {
+  width: 1020px;
+  height: 594px;
+  background-image: url("assets/img/slider/slide.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 /* Services */

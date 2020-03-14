@@ -25,20 +25,38 @@ for (let i = 0; i < anchors.length; i++) {
   });
 }
 
-// Menu fixed position
+// Slide switch
 
-window.addEventListener("scroll", function() {
-  if (pageYOffset >= 95.5) {
-    header.classList.add("menu--fixed");
-  } else {
-    header.classList.remove("menu--fixed");
+const slider = document.querySelector(".slider");
+const prevBtn = document.querySelector(".slider__btn--prev");
+const nextBtn = document.querySelector(".slider__btn--next");
+const slides = slider.querySelectorAll(".slider__item");
+let slideIndex = 1;
+
+slideShow(slideIndex);
+
+function slideShow(n) {
+  if (n < 1) {
+    slideIndex = slides.length;
+  } else if (n > slides.length) {
+    slideIndex = 1;
   }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "flex";
+}
+
+function slideSwitch(n) {
+  slideShow((slideIndex += n));
+}
+
+prevBtn.addEventListener("click", () => {
+  slideSwitch(-1);
+  slider.classList.toggle("slider--active");
 });
 
-window.addEventListener("load", function() {
-  if (pageYOffset >= 95.5) {
-    header.classList.add("menu--fixed");
-  } else {
-    header.classList.remove("menu--fixed");
-  }
+nextBtn.addEventListener("click", () => {
+  slideSwitch(1);
+  slider.classList.toggle("slider--active");
 });
