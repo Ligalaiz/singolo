@@ -548,6 +548,7 @@
                   minlength="4"
                   maxlength="20"
                   required
+                  id="name"
                 />
                 <input
                   class="form__field  form__field--mail"
@@ -556,12 +557,14 @@
                   placeholder="Email (Required)"
                   pattern="[^ @]*@[^ @]*"
                   required
+                  id="email"
                 />
                 <input
                   class="form__field  form__field--subject"
                   type="text"
                   name="subject"
                   placeholder="Subject"
+                  id="subject"
                 />
                 <textarea
                   class="form__field  form__field--detail"
@@ -570,9 +573,16 @@
                   cols="30"
                   rows="12"
                   placeholder="Describe your project in detail..."
+                  id="detail"
                 ></textarea>
                 <button class="form__btn" type="submit">Submit</button>
               </form>
+              <article class="form__popup  popup">
+                <p class="popup__text">Письмо отправлено</p>
+                <p class="popup__subject"></p>
+                <p class="popup__detail"></p>
+                <button class="popup__btn" type="button">Ok</button>
+              </article>
               <article class="form__contacts  contacts">
                 <h2 class="visually-hidden">Our contacts</h2>
                 <p class="contacts__title">Contact Information</p>
@@ -656,6 +666,7 @@
       <!-- main-footer ¯\_(ツ)_/¯ -->
     </div>
     <!-- wrapper ¯\_(ツ)_/¯ -->
+    <div class="overlay"></div>
     <script src="script.js"></script>
   </body>
 </html>

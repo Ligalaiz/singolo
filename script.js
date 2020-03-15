@@ -101,14 +101,20 @@ const layoutsImg = layouts.querySelectorAll(".layouts__item  img");
 
 filter.addEventListener("click", evt => {
   evt.preventDefault();
-  for (let tab of tabs) {
-    tab.classList.remove("filter__btn--active");
-  }
-  evt.target.classList.add("filter__btn--active");
-  for (let i = 0; i < layoutsItm.length; i++) {
-    layoutsItm[i].style.order = Math.round(
-      1 - 0.5 + Math.random() * (layoutsItm.length - 1 + 1)
-    );
+  let target = evt.target;
+  if (
+    target.classList.contains("filter__btn") &&
+    !target.classList.contains("filter__btn--active")
+  ) {
+    for (let tab of tabs) {
+      tab.classList.remove("filter__btn--active");
+    }
+    evt.target.classList.add("filter__btn--active");
+    for (let i = 0; i < layoutsItm.length; i++) {
+      layoutsItm[i].style.order = Math.round(
+        1 - 0.5 + Math.random() * (layoutsItm.length - 1 + 1)
+      );
+    }
   }
 });
 
@@ -116,8 +122,59 @@ filter.addEventListener("click", evt => {
 
 layouts.addEventListener("click", evt => {
   evt.preventDefault();
+  let target = evt.target;
   for (let img of layoutsImg) {
     img.classList.remove("layouts__item--active");
   }
-  evt.target.classList.add("layouts__item--active");
+  if (target.classList.contains("layouts__img")) {
+    evt.target.classList.add("layouts__item--active");
+  }
+});
+
+// Popup
+
+const submit = document.querySelector(".form__btn");
+const overlay = document.querySelector(".overlay");
+const popup = document.querySelector(".popup");
+const popupBtn = popup.querySelector(".popup__btn");
+const name = document.getElementById("name");
+const mail = document.getElementById("email");
+const subject = document.getElementById("subject");
+const detail = document.getElementById("detail");
+const subjectPopup = popup.querySelector(".popup__subject");
+const detailPopup = popup.querySelector(".popup__detail");
+
+submit.addEventListener("click", evt => {
+  evt.preventDefault();
+  if (name.value != "" || mail.value != "") {
+    overlay.classList.add("overlay--active");
+    document.querySelector("body").style.overflow = "hidden";
+    popup.classList.add("popup--active");
+    subjectPopup.textContent =
+      subject.value == "" ? "Без темы" : `Тема: ${subject.value}`;
+    detailPopup.textContent =
+      detail.value == "" ? "Без описания" : `Описание: ${detail.value}`;
+  }
+});
+
+popupBtn.addEventListener("click", evt => {
+  evt.preventDefault();
+  overlay.classList.remove("overlay--active");
+  document.querySelector("body").style.overflow = "visible";
+  popup.classList.remove("popup--active");
+  name.value = "";
+  mail.value = "";
+  subject.value = "";
+  detail.value = "";
+});
+
+overlay.addEventListener("click", evt => {
+  evt.preventDefault();
+  overlay.classList.remove("overlay--active");
+  document.querySelector("body").style.overflow = "visible";
+  popup.classList.remove("popup--active");
+  name.value = "";
+  mail.value = "";
+  subject.value = "";
+  detail.value = "";
 });
