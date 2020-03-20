@@ -1043,3 +1043,13 @@ img {
 #feedback {
   scroll-margin-top: 94px;
 }
+
+/* Tablet */
+
+@media (max-width: 768px) {
+}
+
+/* Mobile */
+
+@media (max-width: 414px) {
+}
