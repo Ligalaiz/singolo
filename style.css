@@ -253,20 +253,90 @@ img {
 
 /* Slider */
 .slider {
+  position: relative;
   height: 600px;
-  border-bottom: 6px solid #ea676b;
 
   background-color: #f06c64;
   overflow: hidden;
 }
 
-.slider--active {
-  background-color: #648bf0;
-  border-color: #5a80e3;
+.slider__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
-.slider__wrap {
+.slider__slides {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__item {
+  position: relative;
+  margin: 0 auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+
+  padding: 0 72px 12px;
+  animation: 0.5s ease-in-out;
+  border-bottom: 6px solid #ea676b;
+}
+
+.active,
+.next {
+  display: flex;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.slider__item--second {
+  background-color: #648bf0;
+  border-color: #5a80e3;
 }
 
 .slider__btn {
@@ -288,18 +358,13 @@ img {
 .slider__btn:hover {
   background-image: url("assets/img/slider/prev_hover.svg");
 }
+
+.slider__btn--prev {
+  left: 20%;
+}
 .slider__btn--next {
   transform: translateY(-50%) rotate(180deg);
-  right: 0;
-}
-
-.slider__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 600px;
-
-  padding: 0 72px 12px;
+  right: 20%;
 }
 
 .phone-vertical,
@@ -326,6 +391,15 @@ img {
   background-image: url("assets/img/slider/slide.png");
   background-repeat: no-repeat;
   background-position: 50%;
+}
+
+@media (max-width: 1020px) {
+  .slider__btn--prev {
+    left: 5%;
+  }
+  .slider__btn--next {
+    right: 5%;
+  }
 }
 
 /* Services */

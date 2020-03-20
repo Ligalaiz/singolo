@@ -60,34 +60,52 @@ const slider = document.querySelector(".slider");
 const prevBtn = document.querySelector(".slider__btn--prev");
 const nextBtn = document.querySelector(".slider__btn--next");
 const slides = slider.querySelectorAll(".slider__item");
-let slideIndex = 1;
-
-slideShow(slideIndex);
+let slideIndex = 0;
+let isEnabled = true;
 
 function slideShow(n) {
-  if (n < 1) {
-    slideIndex = slides.length;
-  } else if (n > slides.length) {
-    slideIndex = 1;
-  }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "flex";
+  slideIndex = (n + slides.length) % slides.length;
 }
 
-function slideSwitch(n) {
-  slideShow((slideIndex += n));
+function hideItem(direction) {
+  isEnabled = false;
+  slides[slideIndex].classList.add(direction);
+  slides[slideIndex].addEventListener("animationend", function() {
+    this.classList.remove("active", direction);
+  });
 }
 
-prevBtn.addEventListener("click", () => {
-  slideSwitch(-1);
-  slider.classList.toggle("slider--active");
+function showItem(direction) {
+  slides[slideIndex].classList.add("next", direction);
+  slides[slideIndex].addEventListener("animationend", function() {
+    this.classList.remove("next", direction);
+    this.classList.add("active");
+    isEnabled = true;
+  });
+}
+
+function nextItem(n) {
+  hideItem("to-left");
+  slideShow(n + 1);
+  showItem("from-right");
+}
+
+function previousItem(n) {
+  hideItem("to-right");
+  slideShow(n - 1);
+  showItem("from-left");
+}
+
+prevBtn.addEventListener("click", function() {
+  if (isEnabled) {
+    previousItem(slideIndex);
+  }
 });
 
-nextBtn.addEventListener("click", () => {
-  slideSwitch(1);
-  slider.classList.toggle("slider--active");
+nextBtn.addEventListener("click", function() {
+  if (isEnabled) {
+    nextItem(slideIndex);
+  }
 });
 
 // Activating Phone Screens
