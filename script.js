@@ -12,6 +12,35 @@ MENU.addEventListener("click", evt => {
   evt.target.classList.add("nav__link--active");
 });
 
+document.addEventListener("scroll", onScroll);
+
+function onScroll(e) {
+  const curPos = window.scrollY;
+  document.querySelectorAll("section").forEach(el => {
+    if (
+      el.offsetTop - 95.5 < curPos &&
+      el.offsetTop - 95.5 + el.offsetHeight > curPos
+    ) {
+      links.forEach(a => {
+        a.classList.remove("nav__link--active");
+        if (el.getAttribute("id") === a.getAttribute("href").substring(1)) {
+          a.classList.add("nav__link--active");
+        }
+      });
+    } else if (window.pageYOffset > 2500) {
+      links.forEach(a => {
+        a.classList.remove("nav__link--active");
+      });
+      links[links.length - 1].classList.add("nav__link--active");
+    } else if (window.pageYOffset == 0) {
+      links.forEach(a => {
+        a.classList.remove("nav__link--active");
+      });
+      links[0].classList.add("nav__link--active");
+    }
+  });
+}
+
 // Smooth scroll
 
 for (let i = 0; i < anchors.length; i++) {

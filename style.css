@@ -962,3 +962,10 @@ img {
 
   z-index: 101;
 }
+
+#services,
+#portfolio,
+#about,
+#feedback {
+  scroll-margin-top: 94px;
+}
