@@ -772,7 +772,7 @@ img {
 
 .form__btn {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
 
   padding: 13px 15px;
@@ -1047,6 +1047,162 @@ img {
 /* Tablet */
 
 @media (max-width: 768px) {
+  /* Slider */
+
+  .slider {
+    height: 451px;
+  }
+
+  .phone-vertical {
+    margin-right: 55px;
+    padding-top: 5px;
+
+    width: 181px;
+    height: 364px;
+  }
+
+  .phone-horizontal {
+    padding-top: 7px;
+
+    width: 364px;
+    height: 181px;
+  }
+
+  .slider__img {
+    background-size: 700px;
+  }
+
+  .slider__btn--next {
+    right: 26px;
+  }
+
+  .slider__btn--prev {
+    left: 26px;
+  }
+
+  /* Services */
+
+  .services {
+    padding: 37px 0 69px;
+  }
+
+  .services__wrap {
+    column-gap: 53px;
+    row-gap: 54px;
+  }
+
+  .services__text {
+    margin-bottom: 40px;
+
+    letter-spacing: 0.2px;
+  }
+
+  /* Portfolio */
+
+  .portfolio {
+    padding-bottom: 66px;
+  }
+
+  .portfolio__text {
+    margin-bottom: 14px;
+
+    letter-spacing: 0.4px;
+  }
+
+  .filter__btn {
+    margin-right: 11px;
+  }
+  .layouts {
+    grid-template-columns: repeat(auto-fit, 215px);
+    row-gap: 18px;
+
+    padding-top: 28px;
+    height: 823px;
+  }
+
+  .layouts__item {
+    width: 215px;
+    height: 184px;
+  }
+
+  .layouts__img {
+    width: 215px;
+    height: 184px;
+  }
+
+  /* About */
+
+  .about {
+    padding: 53px 0 70px;
+  }
+
+  .about__text {
+    margin-bottom: 38px;
+
+    line-height: 1.66;
+    letter-spacing: 0.2px;
+  }
+
+  .team__item {
+    margin-right: 15px;
+  }
+
+  .team__wrap-img {
+    margin-bottom: 2px;
+  }
+
+  .team__name {
+    margin-bottom: 0;
+  }
+
+  .team-text {
+    margin-bottom: 8px;
+
+    line-height: 1.84;
+    letter-spacing: 0.2px;
+  }
+
+  /* Feedback */
+
+  .feedback {
+    padding: 52px 0 38px;
+  }
+
+  .feedback__text {
+    margin-bottom: 24px;
+  }
+
+  .form {
+    max-width: 441px;
+    padding-bottom: 38px;
+  }
+
+  .form__field {
+    margin-bottom: 12px;
+    padding: 11.3px 9px;
+  }
+
+  .form__field--detail {
+    height: 160px;
+  }
+
+  .contacts {
+    max-width: 218px;
+  }
+
+  .contacts__title {
+    margin-bottom: 2px;
+  }
+
+  .contacts__text {
+    margin-bottom: 11px;
+  }
+
+  /* Footer */
+
+  .copyright__text {
+    font-size: 13px;
+  }
 }
 
 /* Mobile */
