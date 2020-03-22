@@ -112,29 +112,30 @@ nextBtn.addEventListener("click", function() {
 
 let phoneVertical = slider.querySelector(".phone-vertical");
 let phoneHorizontal = slider.querySelector(".phone-horizontal");
-let screenExist = 0;
+let screenExistV = 0;
+let screenExistH = 0;
 
 phoneVertical.addEventListener("click", () => {
-  if (screenExist) {
+  if (screenExistV) {
     slider.querySelector("#phone-vertical").src =
       "assets/img/slider/phone-vertical.png";
-    screenExist = 0;
+    screenExistV = 0;
   } else {
     slider.querySelector("#phone-vertical").src =
       "assets/img/slider/phone-vertical--off.png";
-    screenExist = 1;
+    screenExistV = 1;
   }
 });
 
 phoneHorizontal.addEventListener("click", () => {
-  if (screenExist) {
+  if (screenExistH) {
     slider.querySelector("#phone-horizontal").src =
       "assets/img/slider/phone-horizontal.png";
-    screenExist = 0;
+    screenExistH = 0;
   } else {
     slider.querySelector("#phone-horizontal").src =
       "assets/img/slider/phone-horizontal--off.png";
-    screenExist = 1;
+    screenExistH = 1;
   }
 });
 
@@ -224,4 +225,37 @@ overlay.addEventListener("click", evt => {
   mail.value = "";
   subject.value = "";
   detail.value = "";
+});
+
+// Menu
+
+const btnMenu = document.querySelector(".main-header__btn");
+const logoMenu = header.querySelector(".main-header__logo");
+const menuWrap = header.querySelector(".main-header__menu");
+
+btnMenu.addEventListener("click", e => {
+  e.preventDefault();
+  MENU.classList.toggle("nav--active");
+  logoMenu.classList.toggle("logo--active");
+  btnMenu.classList.toggle("main-header__btn--active");
+  overlay.classList.toggle("overlay--active");
+  menuWrap.classList.toggle("main-header__menu--active");
+});
+
+MENU.addEventListener("click", e => {
+  if (e.target.classList.contains("nav__link")) {
+    MENU.classList.remove("nav--active");
+    logoMenu.classList.remove("logo--active");
+    btnMenu.classList.remove("main-header__btn--active");
+    overlay.classList.remove("overlay--active");
+    menuWrap.classList.remove("main-header__menu--active");
+  }
+});
+
+overlay.addEventListener("click", e => {
+  MENU.classList.remove("nav--active");
+  logoMenu.classList.remove("logo--active");
+  btnMenu.classList.remove("main-header__btn--active");
+  overlay.classList.remove("overlay--active");
+  menuWrap.classList.remove("main-header__menu--active");
 });
